@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f1923">
+    <title>UMKM Dusun Mranggen - Desa Kosongan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-ring"></div>
+            <div class="preloader-ring"></div>
+            <div class="preloader-ring"></div>
+            <p class="preloader-text">Memuat Dusun Mranggen</p>
+        </div>
+    </div>
+
+    <!-- Floating Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Custom Cursor (Desktop Only) -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Top Navigation -->
+    <nav id="navbar" class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-mountain-sun"></i>
+                </div>
+                <span class="logo-text">Desa <span class="highlight">Kosongan</span></span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="app-main">
+        <!-- Hero Dusun -->
+        <section class="dusun-hero">
+            <div class="dusun-hero-bg">
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=1200&h=600&fit=crop" alt="Dusun Mranggen">
+                <div class="dusun-hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="dusun-hero-content">
+                    <a href="index.html#dusun" class="back-link">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Kembali ke Daftar Dusun</span>
+                    </a>
+                    <h1 class="dusun-hero-title">Dusun Mranggen</h1>
+                    <p class="dusun-hero-desc">Pedagang sayur, warung makan & bengkel dengan 12 UMKM aktif</p>
+                    <div class="dusun-hero-stats">
+                        <div class="hero-stat-item">
+                            <span class="stat-num">12</span>
+                            <span class="stat-label">UMKM</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="stat-num">3</span>
+                            <span class="stat-label">RT</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="stat-num">2</span>
+                            <span class="stat-label">RW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UMKM List -->
+        <section class="section umkm-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">UMKM di <span class="highlight">Dusun Mranggen</span></h2>
+                    <p class="section-desc">Daftar 12 usaha mikro, kecil, dan menengah</p>
+                </div>
+
+                <div class="umkm-grid">
+                    <!-- RT 14 / RW 07 -->
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&h=300&fit=crop" alt="Pedagang Keliling">
+                            <span class="umkm-category">Pedagang</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>SLAMET SUDIYONO</h3>
+                            <p>Pedagang Keliling • RT 14 / RW 07</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/6282300005975" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&h=300&fit=crop" alt="Pedagang Sayur">
+                            <span class="umkm-category">Pedagang</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>JOKO PURNOMO</h3>
+                            <p>Pedagang Sayur • RT 14 / RW 07</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/6285741691967" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&h=300&fit=crop" alt="Pedagang">
+                            <span class="umkm-category">Pedagang</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>SUMRAT</h3>
+                            <p>Pedagang • RT 14 / RW 07</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/62081329874396" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&h=300&fit=crop" alt="Pedagang Sayur">
+                            <span class="umkm-category">Pedagang</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>PONIEM</h3>
+                            <p>Pedagang Sayur • RT 14 / RW 07</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/6285290220610" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RT 14 / RW 17 -->
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&h=300&fit=crop" alt="Pedagang Sayur">
+                            <span class="umkm-category">Pedagang</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>KUNTI ZUMAROH</h3>
+                            <p>Pedagang Sayur • RT 14 / RW 17</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/6282323870128" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RT 15 / RW 07 -->
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&h=300&fit=crop" alt="Pedagang Sayur">
+                            <span class="umkm-category">Pedagang</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>SUPRIATI</h3>
+                            <p>Pedagang Sayur • RT 15 / RW 07</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/6282323194561" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" alt="Warung Makan">
+                            <span class="umkm-category">Kuliner</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>ADI WIDODO</h3>
+                            <p>Warung Makan • RT 15 / RW 07</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/6285601541271" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1582169296194-e4d644c48063?w=400&h=300&fit=crop" alt="Warung Bakso">
+                            <span class="umkm-category">Kuliner</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>SARDI</h3>
+                            <p>Warung Bakso • RT 15 / RW 07</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/6281565386850" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&h=300&fit=crop" alt="Pedagang Sayur">
+                            <span class="umkm-category">Pedagang</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>DIDIK JOKO SUSILO</h3>
+                            <p>Pedagang Sayur • RT 15 / RW 07</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/6282323194561" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&h=300&fit=crop" alt="Pedagang">
+                            <span class="umkm-category">Pedagang</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>KUWATNI</h3>
+                            <p>Pedagang • RT 15 / RW 07</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/6282265062394" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&h=300&fit=crop" alt="Pedagang Sayur">
+                            <span class="umkm-category">Pedagang</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>ISTIKOMAH</h3>
+                            <p>Pedagang Sayur • RT 15 / RW 07</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/62081325695864" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400&h=300&fit=crop" alt="Bengkel Las">
+                            <span class="umkm-category">Bengkel</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>SUBARDI</h3>
+                            <p>Bengkel Las • RT 15 / RW 07</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/6282265088393" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

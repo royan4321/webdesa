@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f1923">
+    <title>UMKM Dusun Kenangkan - Desa Kosongan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-ring"></div>
+            <div class="preloader-ring"></div>
+            <div class="preloader-ring"></div>
+            <p class="preloader-text">Memuat Dusun Kenangkan</p>
+        </div>
+    </div>
+
+    <!-- Floating Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Custom Cursor (Desktop Only) -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Top Navigation -->
+    <nav id="navbar" class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-mountain-sun"></i>
+                </div>
+                <span class="logo-text">Desa <span class="highlight">Kosongan</span></span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="app-main">
+        <!-- Hero Dusun -->
+        <section class="dusun-hero">
+            <div class="dusun-hero-bg">
+                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=600&fit=crop" alt="Dusun Kenangkan">
+                <div class="dusun-hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="dusun-hero-content">
+                    <a href="index.html#dusun" class="back-link">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Kembali ke Daftar Dusun</span>
+                    </a>
+                    <h1 class="dusun-hero-title">Dusun Kenangkan</h1>
+                    <p class="dusun-hero-desc">Dagang kue khas daerah dengan 1 UMKM aktif</p>
+                    <div class="dusun-hero-stats">
+                        <div class="hero-stat-item">
+                            <span class="stat-num">1</span>
+                            <span class="stat-label">UMKM</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="stat-num">1</span>
+                            <span class="stat-label">RT</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="stat-num">1</span>
+                            <span class="stat-label">RW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UMKM List -->
+        <section class="section umkm-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">UMKM di <span class="highlight">Dusun Kenangkan</span></h2>
+                    <p class="section-desc">Daftar 1 usaha mikro, kecil, dan menengah</p>
+                </div>
+
+                <div class="umkm-grid">
+                    <!-- RT 06 / RW 03 -->
+                    <div class="umkm-card reveal-up">
+                        <div class="umkm-image">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Dagang Kue">
+                            <span class="umkm-category">Kuliner</span>
+                        </div>
+                        <div class="umkm-content">
+                            <h3>ISTIATI</h3>
+                            <p>Dagang Kue • RT 06 / RW 03</p>
+                            <div class="umkm-actions">
+                                <a href="https://wa.me/6285741527230" class="btn-umkm btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
