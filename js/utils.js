@@ -105,8 +105,8 @@ export function initUtils() {
             e.preventDefault();
             triggerHaptic();
             const shareData = {
-                title: 'UMKM Desa Kosongan',
-                text: 'Jelajahi produk unggulan dari 8 dusun di Desa Kosongan',
+                title: 'UMKM Desa Kragilan',
+                text: 'Jelajahi produk unggulan dari 8 dusun di Desa Kragilan',
                 url: window.location.href
             };
 
@@ -128,10 +128,10 @@ export function initUtils() {
             navigator.clipboard.writeText(window.location.href).then(() => {
                 showToast('Tautan tersalin ke papan klip!', 'fa-copy');
             }).catch(() => {
-                showToast('Portal UMKM Desa Kosongan', 'fa-link');
+                showToast('Portal UMKM Desa Kragilan', 'fa-link');
             });
         } else {
-            showToast('Portal UMKM Desa Kosongan', 'fa-link');
+            showToast('Portal UMKM Desa Kragilan', 'fa-link');
         }
     }
 
@@ -147,6 +147,6 @@ export function initUtils() {
         }
     });
 
-    console.log('%c🏡 UMKM Desa Kosongan - Portal Resmi', 'color: #10b981; font-size: 16px; font-weight: bold;');
+    console.log('%c🏡 UMKM Desa Kragilan - Portal Resmi', 'color: #10b981; font-size: 16px; font-weight: bold;');
     console.log('%c✨ Modular JavaScript Engine Loaded', 'color: #f59e0b; font-size: 12px;');
 }

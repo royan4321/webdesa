@@ -170,3 +170,33 @@
         --section-padding: 120px;
     }
 }
+
+/* Mobile Performance Optimization Overrides (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Disable GPU-heavy backdrop-blur filters on mobile for silky-smooth 60fps scrolling */
+    .hero-badge,
+    .stat-item,
+    .section-tag,
+    .dusun-card,
+    .stats-card,
+    .gov-card,
+    .potensi-card,
+    .glass-card,
+    .navbar,
+    .nav-menu,
+    .toast,
+    .page-transition-overlay {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    /* Force hardware acceleration layers on animated containers */
+    .dusun-card,
+    .gov-card,
+    .potensi-card,
+    .hero-section {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+}
+

@@ -9,12 +9,28 @@ export function initNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
     const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
     const backToTop = document.getElementById('back-to-top');
+    const sections = document.querySelectorAll('section[id]');
 
-    // Header scroll background toggle & hide on scroll down
+    // Cache section positions to prevent layout thrashing (forced reflow) on scroll
+    let cachedSections = [];
+    function cacheSectionPositions() {
+        cachedSections = Array.from(sections).map(section => ({
+            id: section.getAttribute('id'),
+            top: section.offsetTop,
+            height: section.offsetHeight
+        }));
+    }
+    cacheSectionPositions();
+    window.addEventListener('resize', cacheSectionPositions, { passive: true });
+
+    // Header scroll background toggle, hide on scroll down, and active section tracking
     let lastScrollY = 0;
-    window.addEventListener('scroll', () => {
+    let ticking = false;
+
+    function handleScroll() {
         const currentScrollY = window.scrollY;
 
+        // Header background & hide/show logic
         if (currentScrollY > 80) {
             navbar.classList.add('scrolled');
         } else {
@@ -34,7 +50,40 @@ export function initNavigation() {
         }
 
         lastScrollY = currentScrollY;
-    });
+
+        // Active Section Tracking using cached positions
+        const scrollPos = currentScrollY + 200;
+        for (let i = 0; i < cachedSections.length; i++) {
+            const sec = cachedSections[i];
+            if (scrollPos >= sec.top && scrollPos < sec.top + sec.height) {
+                navLinks.forEach(link => {
+                    if (link.getAttribute('data-section') === sec.id) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+
+                mobileNavItems.forEach(item => {
+                    if (item.getAttribute('data-section') === sec.id) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+                break;
+            }
+        }
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(handleScroll);
+            ticking = true;
+        }
+    }, { passive: true });
 
     if (backToTop) {
         backToTop.addEventListener('click', () => {
@@ -56,37 +105,6 @@ export function initNavigation() {
             });
         });
     }
-
-    // Active Section Tracking on Scroll
-    const sections = document.querySelectorAll('section[id]');
-
-    function updateActiveNav() {
-        const scrollPos = window.scrollY + 200;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('data-section') === sectionId) {
-                        link.classList.add('active');
-                    }
-                });
-
-                mobileNavItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('data-section') === sectionId) {
-                        item.classList.add('active');
-                    }
-                });
-            }
-        });
-    }
-
-    window.addEventListener('scroll', updateActiveNav);
 
     // Smooth Anchor Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -131,3 +149,4 @@ export function initNavigation() {
         });
     }
 }
+

@@ -3,18 +3,49 @@
    =================================== */
 
 export function initAnimations() {
-    // Top Scroll Progress Bar
-    const scrollProgressBar = document.getElementById('scroll-progress');
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        if (scrollHeight > 0 && scrollProgressBar) {
-            const progress = (scrollTop / scrollHeight) * 100;
-            scrollProgressBar.style.width = progress + '%';
-        }
-    });
+    const isMobile = window.innerWidth <= 768;
 
-    // Scroll Reveal Intersection Observer
+    // Combined RAF-throttled Scroll Handler for progress bar and parallax
+    const scrollProgressBar = document.getElementById('scroll-progress');
+    const parallaxItems = isMobile ? [] : document.querySelectorAll('.about-image-float');
+
+    let ticking = false;
+
+    function handleScroll() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        // Top Scroll Progress Bar
+        if (scrollProgressBar) {
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (scrollHeight > 0) {
+                const progress = (scrollTop / scrollHeight) * 100;
+                scrollProgressBar.style.width = progress + '%';
+            }
+        }
+
+        // Parallax on Scroll (Desktop only)
+        if (!isMobile && parallaxItems.length > 0) {
+            parallaxItems.forEach((item) => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const speed = 0.03;
+                    const yPos = (window.innerHeight / 2 - rect.top) * speed;
+                    item.style.transform = `translateY(${yPos}px)`;
+                }
+            });
+        }
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(handleScroll);
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // Scroll Reveal Intersection Observer (using native entry.boundingClientRect to avoid layout thrashing)
     const revealElements = document.querySelectorAll(
         '.reveal-up, .reveal-left, .reveal-right, .reveal-zoom, .reveal-flip, .section-header, .section-line'
     );
@@ -26,7 +57,7 @@ export function initAnimations() {
                 const line = entry.target.querySelector('.section-line');
                 if (line) line.classList.add('revealed');
             } else {
-                const rect = entry.target.getBoundingClientRect();
+                const rect = entry.boundingClientRect;
                 if (rect.top > window.innerHeight || rect.bottom < 0) {
                     entry.target.classList.remove('revealed');
                     const line = entry.target.querySelector('.section-line');
@@ -41,18 +72,6 @@ export function initAnimations() {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // Dynamic Parallax on Scroll (disabled for cards to prevent overlap)
-    const parallaxItems = document.querySelectorAll('.about-image-float');
-    window.addEventListener('scroll', () => {
-        parallaxItems.forEach((item, index) => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                const speed = 0.03;
-                const yPos = (window.innerHeight / 2 - rect.top) * speed;
-                item.style.transform = `translateY(${yPos}px)`;
-            }
-        });
-    });
 
     // Counter Numbers Animation
     const counters = document.querySelectorAll('[data-target]');

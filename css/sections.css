@@ -1136,6 +1136,13 @@
     margin-bottom: 12px;
 }
 
+.footer-logo-img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(16, 185, 129, 0.4));
+}
+
 .footer-logo i {
     color: var(--primary-400);
 }

@@ -53,7 +53,7 @@ export function initGallery() {
 
         if (img) {
             lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt || 'Desa Kosongan';
+            lightboxImg.alt = img.alt || 'Desa Kragilan';
         }
         if (lightboxCaption && info) {
             lightboxCaption.textContent = info.textContent;

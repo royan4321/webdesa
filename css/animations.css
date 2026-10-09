@@ -37,8 +37,13 @@
 }
 
 @keyframes progressGlow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
 }
 
 /* Scroll Reveal Classes */
@@ -49,19 +54,20 @@
 .reveal-flip {
     opacity: 0;
     transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
 /* Mobile: Faster reveal animations */
 @media (max-width: 768px) {
+
     .reveal-up,
     .reveal-left,
     .reveal-right,
     .reveal-zoom,
     .reveal-flip {
         transition: opacity 0.4s ease,
-                    transform 0.4s ease;
+            transform 0.4s ease;
     }
 }
 
@@ -114,10 +120,12 @@
     0% {
         transform: translateY(0) rotate(0deg) scale(1);
     }
+
     50% {
         transform: translateY(-10px) rotate(2.5deg) scale(1.05);
         box-shadow: 0 18px 40px rgba(16, 185, 129, 0.5);
     }
+
     100% {
         transform: translateY(4px) rotate(-1.5deg) scale(0.98);
     }
@@ -128,8 +136,13 @@
 }
 
 @keyframes overlayFloat {
-    0% { transform: translateY(0) scale(1); }
-    100% { transform: translateY(-8px) scale(1.03); }
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        transform: translateY(-8px) scale(1.03);
+    }
 }
 
 /* Animated Section Underline */
@@ -143,8 +156,13 @@
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
 }
 
 /* Dynamic Glowing Text Effect */
@@ -158,9 +176,17 @@
 }
 
 @keyframes shimmerText {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Hover & Tap Animations for Cards */
@@ -170,12 +196,13 @@
 .stats-card,
 .gallery-item {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                box-shadow 0.3s ease,
-                border-color 0.3s ease !important;
+        box-shadow 0.3s ease,
+        border-color 0.3s ease !important;
     will-change: transform;
 }
 
 @media (hover: hover) and (pointer: fine) {
+
     .gov-card:hover,
     .potensi-card:hover,
     .glass-card:hover,
@@ -239,6 +266,7 @@
         opacity: 0;
         transform: translate(-50%, -50%) translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translate(-50%, -50%) translateY(0);
@@ -257,8 +285,13 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .loader-text {
@@ -272,10 +305,13 @@
 }
 
 @keyframes textPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
         transform: scale(1);
     }
+
     50% {
         opacity: 0.7;
         transform: scale(1.05);
@@ -304,6 +340,7 @@
     0% {
         background-position: 0% 50%;
     }
+
     100% {
         background-position: 200% 50%;
     }
@@ -332,6 +369,7 @@ body.page-loading {
 
 /* Mobile: Disable complex animations to improve performance */
 @media (max-width: 768px) {
+
     /* Reduce motion for better mobile experience */
     .page-transition-overlay,
     .transition-loader,
@@ -339,7 +377,7 @@ body.page-loading {
     .explosion-particle {
         animation-duration: 0.5s !important;
     }
-    
+
     /* Simplify hover effects on mobile */
     .gov-card,
     .potensi-card,
@@ -348,18 +386,18 @@ body.page-loading {
     .gallery-item {
         transition: transform 0.2s ease, opacity 0.2s ease !important;
     }
-    
+
     /* Disable floating animations on mobile */
     .about-experience-badge,
     .image-overlay-badge {
         animation: none !important;
     }
-    
+
     /* Faster card transitions on mobile */
     .dusun-card {
         transition: transform 0.15s ease, opacity 0.15s ease !important;
     }
-    
+
     /* Disable custom cursor on mobile */
     .cursor-dot,
     .cursor-outline {
@@ -369,6 +407,7 @@ body.page-loading {
 
 /* Reduce motion preference support */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
