@@ -93,7 +93,8 @@ export function initNavigation() {
 
     // Mobile Hamburger Menu Toggle
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             navToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
@@ -103,6 +104,13 @@ export function initNavigation() {
                 navToggle.classList.remove('active');
                 navMenu.classList.remove('active');
             });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
         });
     }
 
