@@ -8,3 +8,43 @@
 @import url('css/sections.css');
 @import url('css/animations.css');
 @import url('css/responsive.css');
+
+/* ===================================
+   LOGO SIZING SAFEGUARDS
+   Ensures logos render at exact dimensions immediately on all devices
+   =================================== */
+.nav-logo-img {
+    width: 34px !important;
+    height: 34px !important;
+    max-width: 34px !important;
+    max-height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+}
+
+.footer-logo-img {
+    width: 38px !important;
+    height: 38px !important;
+    max-width: 38px !important;
+    max-height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+}
+
+/* ===================================
+   BUTTON SAFEGUARDS
+   Ensures NIB button renders with vibrant color immediately on all devices
+   =================================== */
+.btn-accent {
+    background-color: #f59e0b !important;
+    background: linear-gradient(135deg, #f59e0b, #ea580c) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    border-radius: 50px !important;
+}

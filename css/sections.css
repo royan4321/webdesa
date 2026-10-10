@@ -247,6 +247,64 @@
     }
 }
 
+/* KUMAN Hero Badge */
+.kuman-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(245, 158, 11, 0.14));
+    border: 1px solid rgba(52, 211, 153, 0.4);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2), inset 0 0 12px rgba(16, 185, 129, 0.1);
+    padding: 10px 24px;
+    border-radius: 50px;
+    margin: 14px auto 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.kuman-hero-badge:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-400);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.kuman-title {
+    font-family: var(--font-primary);
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #34d399, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    filter: drop-shadow(0 2px 8px rgba(16, 185, 129, 0.3));
+}
+
+.kuman-sub {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.4px;
+}
+
+@media (max-width: 600px) {
+    .kuman-hero-badge {
+        padding: 8px 18px;
+        gap: 6px;
+        margin: 12px auto 16px;
+    }
+    .kuman-title {
+        font-size: 1.2rem;
+        letter-spacing: 1.5px;
+    }
+    .kuman-sub {
+        font-size: 0.78rem;
+    }
+}
+
 .hero-subtitle {
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.75);
@@ -286,6 +344,10 @@
 
 .hero-buttons .btn:nth-child(2) {
     animation-delay: 1s;
+}
+
+.hero-buttons .btn:nth-child(3) {
+    animation-delay: 1.2s;
 }
 
 @keyframes buttonPop {
@@ -1126,7 +1188,7 @@
 }
 
 .footer-logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
     font-family: var(--font-display);
@@ -1145,6 +1207,7 @@
     min-height: 38px !important;
     object-fit: contain !important;
     flex-shrink: 0 !important;
+    display: inline-block !important;
     filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.4));
 }
 
