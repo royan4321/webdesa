@@ -2,12 +2,67 @@
    DESA KOSONGAN - MAIN STYLESHEET ENTRY
    =================================== */
 
-@import url('css/variables.css');
-@import url('css/navigation.css');
-@import url('css/components.css');
-@import url('css/sections.css');
-@import url('css/animations.css');
-@import url('css/responsive.css');
+@import url('css/variables.css?v=3.0');
+@import url('css/navigation.css?v=3.0');
+@import url('css/components.css?v=3.0');
+@import url('css/sections.css?v=3.0');
+@import url('css/animations.css?v=3.0');
+@import url('css/responsive.css?v=3.0');
+
+/* ===================================
+   KUMAN BRANDING SAFEGUARDS
+   Guarantees KUMAN pill badge renders identical on mobile & desktop
+   =================================== */
+.kuman-hero-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(245, 158, 11, 0.15)) !important;
+    background-color: rgba(16, 185, 129, 0.18) !important;
+    border: 1.5px solid rgba(52, 211, 153, 0.5) !important;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25), inset 0 0 12px rgba(16, 185, 129, 0.1) !important;
+    padding: 8px 22px !important;
+    border-radius: 50px !important;
+    margin: 14px auto 18px !important;
+    text-align: center !important;
+}
+
+.kuman-title {
+    font-family: var(--font-primary, 'Plus Jakarta Sans', sans-serif) !important;
+    font-size: 1.35rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    color: #34d399 !important;
+    background: linear-gradient(135deg, #34d399, #fbbf24) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block !important;
+    filter: drop-shadow(0 2px 8px rgba(16, 185, 129, 0.35)) !important;
+}
+
+.kuman-sub {
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    letter-spacing: 0.4px !important;
+}
+
+@media (max-width: 600px) {
+    .kuman-hero-badge {
+        padding: 8px 18px !important;
+        gap: 6px !important;
+        margin: 12px auto 16px !important;
+    }
+    .kuman-title {
+        font-size: 1.2rem !important;
+        letter-spacing: 1.5px !important;
+    }
+    .kuman-sub {
+        font-size: 0.8rem !important;
+    }
+}
 
 /* ===================================
    LOGO SIZING SAFEGUARDS
