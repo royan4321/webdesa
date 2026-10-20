@@ -1,6 +1,6 @@
-# 🏘️ Website UMKM Desa Kosongan
+# 🏘️ Website UMKM Desa Kragilan
 
-Portal UMKM (Usaha Mikro Kecil Menengah) Desa Kosongan - Website modern dan mobile-first untuk menampilkan 84 UMKM dari 8 dusun.
+Portal UMKM (Usaha Mikro Kecil Menengah) Desa Kragilan - Website modern dan mobile-first untuk menampilkan 84 UMKM dari 8 dusun.
 
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat&logo=vercel)](https://vercel.com)
 [![Mobile First](https://img.shields.io/badge/Mobile-First-green?style=flat)](#)
@@ -177,5 +177,5 @@ MIT License - feel free to use this project for your village website!
 ---
 
 <div align="center">
-Made with ❤️ for Desa Kosongan
+Made with ❤️ for Desa Kragilan
 </div>

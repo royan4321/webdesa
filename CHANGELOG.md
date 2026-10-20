@@ -1,4 +1,4 @@
-# Changelog - Website UMKM Desa Kosongan
+# Changelog - Website UMKM Desa Kragilan
 
 ## 🚀 Version 3.0 - Mobile-First Optimization (Latest)
 **Date:** 2024-01-XX  

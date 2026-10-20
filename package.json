@@ -1,7 +1,7 @@
 {
-  "name": "desa-kosongan",
+  "name": "desa-kragilan",
   "version": "1.0.0",
-  "description": "Website Profil Desa Kosongan",
+  "description": "Website Profil Desa Kragilan",
   "scripts": {
     "dev": "npx http-server -p 3000 -o",
     "start": "npx http-server -p 3000"
